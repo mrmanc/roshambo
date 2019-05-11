@@ -1,21 +1,30 @@
-var activePlayer = -1;
-var playerMoves = [];
+var activePlayer = 0;
+var player1Move = null;
+var player2Move = null;
 
 function changePlayer(){
-    activePlayer = (activePlayer + 1) % 2;
-    document.getElementById("activePlayer").innerHTML = "It's player " + (activePlayer + 1) + "'s turn!";
+    activePlayer = activePlayer % 2 + 1;
+    document.getElementById("activePlayer").innerHTML =
+		"It's player " + activePlayer + "'s turn!";
 }
 
 function checkForWinner(){
-    if( playerMoves.length === 2 ){
-        alert( "? wins!" );
-        playerMoves = [];
+    if( player1Move && player2Move ){
+        document.getElementById("winner").innerHTML = "? wins!";
+	
+
+	//reset game
+        player1Move = null;
+	player2Move = null;
     }
 }
 
 function play(moveName) {
-    playerMoves[activePlayer] = moveName;
+    if( activePlayer === 1 ) {
+	player1Move = moveName;
+    } else {
+        player2Move = moveName;
+    }
     checkForWinner();
     changePlayer();
-//    $( "button.rock" ).focus();
 }
