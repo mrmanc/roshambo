@@ -3,7 +3,7 @@ var playerMoves = [];
 
 function changePlayer(){
     activePlayer = (activePlayer + 1) % 2;
-    $( "h1.activePlayer" ).html("It's player " + (activePlayer + 1) + "'s turn!");
+    document.getElementById("activePlayer").innerHTML = "It's player " + (activePlayer + 1) + "'s turn!";
 }
 
 function checkForWinner(){
@@ -17,5 +17,5 @@ function play(moveName) {
     playerMoves[activePlayer] = moveName;
     checkForWinner();
     changePlayer();
-    $( "button.rock" ).focus();
+//    $( "button.rock" ).focus();
 }
