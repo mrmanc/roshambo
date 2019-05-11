@@ -10,13 +10,14 @@ function changePlayer(){
 
 function checkForWinner(){
     if( player1Move && player2Move ){
-        document.getElementById("winner").innerHTML = "? wins!";
-	
-
-	//reset game
-        player1Move = null;
-	player2Move = null;
+        document.getElementById("winner").innerHTML = "Who wins!";
+	resetGame();	
     }
+}
+
+function resetGame(){
+    player1Move = null;
+    player2Move = null;
 }
 
 function play(moveName) {
