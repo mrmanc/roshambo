@@ -5,13 +5,13 @@ var player2Move = null;
 function changePlayer(){
     activePlayer = activePlayer % 2 + 1;
     document.getElementById("activePlayer").innerHTML =
-		"It's player " + activePlayer + "'s turn!";
+        "It's player " + activePlayer + "'s turn!";
 }
 
 function checkForWinner(){
     if( player1Move && player2Move ){
         document.getElementById("winner").innerHTML = "Who wins!";
-	resetGame();	
+        resetGame();
     }
 }
 
@@ -22,7 +22,7 @@ function resetGame(){
 
 function play(moveName) {
     if( activePlayer === 1 ) {
-	player1Move = moveName;
+        player1Move = moveName;
     } else {
         player2Move = moveName;
     }
